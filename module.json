@@ -9,7 +9,8 @@
   },
   "authors": [
     {
-      "name": "Você"
+      "name": "angelomagnoBR",
+      "url": "https://github.com/angelomagnoBR"
     }
   ],
   "esmodules": ["scripts/main.js"],
@@ -21,5 +22,8 @@
       "path": "lang/pt-BR.json"
     }
   ],
+  "url": "https://github.com/angelomagnoBR/Camera-layout",
+  "manifest": "https://github.com/angelomagnoBR/Camera-layout/releases/latest/download/module.json",
+  "download": "https://github.com/angelomagnoBR/Camera-layout/releases/latest/download/camera-layout.zip",
   "flags": {}
 }
