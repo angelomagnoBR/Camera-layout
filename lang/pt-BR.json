@@ -1,0 +1,19 @@
+{
+  "CAMERA_LAYOUT.Title": "Camera Layout Manager",
+  "CAMERA_LAYOUT.SaveLayout": "Salvar Layout",
+  "CAMERA_LAYOUT.LoadLayout": "Carregar Layout",
+  "CAMERA_LAYOUT.DeleteLayout": "Deletar Layout",
+  "CAMERA_LAYOUT.SyncLayout": "Sincronizar para Todos",
+  "CAMERA_LAYOUT.LayoutName": "Nome do Layout",
+  "CAMERA_LAYOUT.LayoutNamePlaceholder": "Ex: Sessão Principal",
+  "CAMERA_LAYOUT.NoLayouts": "Nenhum layout salvo.",
+  "CAMERA_LAYOUT.ConfirmDelete": "Deletar o layout \"{name}\"?",
+  "CAMERA_LAYOUT.SavedSuccess": "Layout \"{name}\" salvo!",
+  "CAMERA_LAYOUT.LoadedSuccess": "Layout \"{name}\" carregado!",
+  "CAMERA_LAYOUT.SyncedSuccess": "Layout sincronizado para todos os jogadores!",
+  "CAMERA_LAYOUT.DetachCameras": "Destacar Câmeras",
+  "CAMERA_LAYOUT.AttachCameras": "Reencaixar Câmeras",
+  "CAMERA_LAYOUT.ManageLayouts": "Gerenciar Layouts",
+  "CAMERA_LAYOUT.ErrorNoName": "Digite um nome para o layout.",
+  "CAMERA_LAYOUT.NoCamerasFound": "Nenhuma câmera A/V ativa encontrada."
+}

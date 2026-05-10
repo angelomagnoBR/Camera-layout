@@ -1,0 +1,231 @@
+/* ─── Camera Layout Manager ─── */
+
+/* Janela flutuante de câmera */
+.camera-layout-window {
+  position: fixed;
+  z-index: 9000;
+  border: 2px solid #444;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  min-width: 120px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.camera-layout-window.dragging {
+  opacity: 0.85;
+  border-color: #7a8fa6;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.9);
+}
+
+/* Barra de título da janela */
+.camera-layout-window .cam-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a2e;
+  padding: 3px 8px;
+  cursor: grab;
+  user-select: none;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.camera-layout-window .cam-titlebar:active {
+  cursor: grabbing;
+}
+
+.camera-layout-window .cam-name {
+  font-size: 11px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.camera-layout-window .cam-close {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.camera-layout-window .cam-close:hover {
+  color: #e74c3c;
+}
+
+/* Vídeo / avatar dentro da janela */
+.camera-layout-window .cam-body {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.camera-layout-window .cam-body video,
+.camera-layout-window .cam-body img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Alça de redimensionamento */
+.camera-layout-window .cam-resize {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  cursor: se-resize;
+  background: linear-gradient(135deg, transparent 50%, #555 50%);
+  z-index: 1;
+}
+
+/* ─── Painel de gerenciamento de layouts ─── */
+#camera-layout-manager {
+  font-family: var(--font-primary, "Signika", sans-serif);
+}
+
+#camera-layout-manager .layout-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+#camera-layout-manager .layout-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 4px;
+  border-bottom: 1px solid #3a3a3a;
+  transition: background 0.1s;
+}
+
+#camera-layout-manager .layout-list li:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+#camera-layout-manager .layout-list .layout-name {
+  flex: 1;
+  font-size: 13px;
+  color: #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#camera-layout-manager .layout-list button {
+  font-size: 11px;
+  padding: 2px 7px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #555;
+  background: #2a2a2a;
+  color: #ccc;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+#camera-layout-manager .layout-list button:hover {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+#camera-layout-manager .layout-list button.btn-sync {
+  border-color: #2980b9;
+  color: #5dade2;
+}
+#camera-layout-manager .layout-list button.btn-sync:hover {
+  background: #2980b9;
+  color: #fff;
+}
+
+#camera-layout-manager .layout-list button.btn-delete {
+  border-color: #922b21;
+  color: #e74c3c;
+}
+#camera-layout-manager .layout-list button.btn-delete:hover {
+  background: #922b21;
+  color: #fff;
+}
+
+#camera-layout-manager .new-layout-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+#camera-layout-manager .new-layout-row input {
+  flex: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #1a1a1a;
+  color: #eee;
+  font-size: 13px;
+}
+
+#camera-layout-manager .new-layout-row button {
+  padding: 4px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #27ae60;
+  background: #1e8449;
+  color: #fff;
+  font-size: 13px;
+  transition: background 0.15s;
+}
+
+#camera-layout-manager .new-layout-row button:hover {
+  background: #27ae60;
+}
+
+#camera-layout-manager .empty-msg {
+  color: #888;
+  font-size: 13px;
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* ─── Botões no controle A/V ─── */
+#camera-layout-controls {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 4px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#camera-layout-controls button {
+  font-size: 11px;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #555;
+  background: #222;
+  color: #ccc;
+  transition: background 0.15s;
+}
+
+#camera-layout-controls button:hover {
+  background: #333;
+  color: #fff;
+}
+
+#camera-layout-controls button.active {
+  border-color: #2ecc71;
+  color: #2ecc71;
+}
